@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quote Generator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image:url("a3.jpeg");
+    }
+    .container {
+        max-width: 500px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    textarea {
+        height: 100px;
+    }
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Generate Your Quote</h1>
+    <form action="final.html" id="quoteForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your Name">
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" placeholder="Enter your Email">
+
+        <label for="category">Category:</label><br>
+        <select id="category" name="category" required>
+            <option value="">Select Category</option>
+            <option value="Motivation">Motivation</option>
+            <option value="Success">Success</option>
+            <option value="Nature">Nature</option>
+        </select>
+<br>
+
+        <label for="quote">Quote:</label>
+        <textarea id="quote" name="quote" placeholder="Enter your quote"></textarea>
+
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" placeholder="Author name">
+
+        <label for="comments">Additional Comments:</label>
+        <textarea id="comments" name="comments" placeholder="Any additional comments"></textarea>
+
+        <button type="submit">Generate Quote</button>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        var name = document.getElementById('name').value;
+        var category = document.getElementById('category').value;
+        var quote = document.getElementById('quote').value;
+
+        if (name.trim() == '') {
+            alert('Please enter your name.');
+            return false;
+        }
+
+        if (category.trim() == '') {
+            alert('Please enter the category/topic.');
+            return false;
+        }
+
+        if (quote.trim() == '') {
+            alert('Please enter the quote.');
+            return false;
+        }
+
+        return true;
+    }
+</script>
+</body>
+</html>
